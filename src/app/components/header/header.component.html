@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="logo">
+    <a routerLink="/">
+      <img src="assets/images/logo.png" alt="Logo" />
+      <span>{{ siteName }}</span>
+    </a>
+  </div>
+
+  <div class="search-bar">
+    <fa-icon [icon]="faSearch" class="search-icon"></fa-icon>
+    <input type="text" placeholder="Pesquisar..." />
+  </div>
+
+  <nav>
+    <a routerLink="/">Início</a>
+    <a routerLink="/restaurantes">Restaurantes</a>
+    <a routerLink="/mercados">Mercados</a>
+  </nav>
+
+  <div class="buttons-container">
+    <button class="btn-login">Entrar</button>
+    <button class="btn-register">Registrar-se</button>
+  </div>
+</header>
