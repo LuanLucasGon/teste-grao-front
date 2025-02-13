@@ -44,4 +44,22 @@
     </div>
   </div>
 
+  <div class="menu-list-container">
+    <h2>Mais pedidos da semana</h2>
+    <div class="category-list">
+      <div class="menu-item" *ngFor="let menuItem of menuItens">
+        <div class="menu-card">
+          <img [src]="menuItem.imageUrl" [alt]="menuItem.title" class="menu-image" />
+          <div class="menu-info">
+            <h4>{{ menuItem.title }}</h4>
+            <p class="category">{{ menuItem.subtitle }}</p>
+          </div>
+          <div class="price-container">
+            <span class="price">{{ menuItem.price }}</span>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </main>
