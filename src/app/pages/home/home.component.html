@@ -1,0 +1,13 @@
+<app-header></app-header>
+
+<div class="restaurant-list-container">
+  <h2>Restaurantes</h2>
+  <div class="restaurant-list">
+    <div class="restaurant-item" *ngFor="let restaurant of restaurants">
+      <img [src]="restaurant.imageUrl" [alt]="restaurant.name" class="restaurant-image" />
+      <div class="restaurant-info">
+        <h3>{{ restaurant.name }}</h3>
+      </div>
+    </div>
+  </div>
+</div>

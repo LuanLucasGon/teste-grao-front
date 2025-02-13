@@ -1,14 +1,29 @@
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .header {
   display: flex;
-  align-items: center;
+  align-items: center; 
   justify-content: space-between;
   padding: 10px 20px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
+  
   .logo {
     display: flex;
     align-items: center;
+
+    a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
 
     img {
       height: 40px;
@@ -16,7 +31,7 @@
     }
 
     span {
-      font-size: 18px;
+      font-size: 24px;
       font-weight: bold;
       color: #000;
     }
