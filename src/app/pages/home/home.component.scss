@@ -1,4 +1,4 @@
-.restaurant-list-container {
+.restaurant-list-container, .category-list-container {
   max-width: 1200px;
   margin: 0;
   padding: 20px;
@@ -7,20 +7,21 @@
 
 h2 {
   font-size: 24px;
+  margin: 0;
   margin-bottom: 20px;
   color: #000;
   font-weight: 500;
   text-align: left;
 }
 
-.restaurant-list {
+.restaurant-list, .category-list {
   display: flex;
   flex-wrap: wrap; 
   gap: 20px;
   justify-content: flex-start;
 }
 
-.restaurant-item {
+.restaurant-item, .category-item {
   display: flex;
   flex-direction: column;
   width: 80px;
@@ -36,13 +37,13 @@ h2 {
   }
 }
 
-.restaurant-image {
+.restaurant-image, .category-image {
   width: 100%;
   height: 70%;
   object-fit: cover;
 }
 
-.restaurant-info {
+.restaurant-info, .category-info {
   padding: 5px;
   text-align: center;
 
