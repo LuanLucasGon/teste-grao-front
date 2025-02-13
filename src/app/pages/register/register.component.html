@@ -15,6 +15,14 @@
   
         <form (ngSubmit)="onSubmit()">
           <div class="input-group">
+            <input type="text" placeholder="Digite seu nome" [(ngModel)]="name" name="name" required>
+          </div>
+
+          <div class="input-group">
+            <input type="text" placeholder="Digite seu CPF" [(ngModel)]="cpf" name="cpf" required>
+          </div>
+
+          <div class="input-group">
             <input type="email" placeholder="Digite seu email" [(ngModel)]="email" name="email" required>
           </div>
   
@@ -24,15 +32,15 @@
               👁️
             </span>
           </div>
-  
-          <div class="forgot-password">
-            <a href="#">Esqueceu sua senha?</a>
+
+          <div class="input-group password-group">
+            <input [type]="showPassword ? 'text' : 'password'" placeholder="Confirme a senha" [(ngModel)]="confirmPassword" name="confirmPassword" required>
           </div>
   
           <button type="submit" class="login-button">Entrar</button>
         </form>
   
-        <p class="signup-text">Não tem uma conta? <a routerLink="/register">Criar</a></p>
+        <p class="signup-text">Já tem uma conta? <a routerLink="/login">Entrar</a></p>
       </div>
     </div>
   </div>
