@@ -1,0 +1,39 @@
+<main>
+  <div class="login-container">
+    <div class="login-left">
+      <div class="logo">
+        <a routerLink="/home">
+          <img src="assets/images/logo.png" alt="Logo" />
+        </a>
+      </div>
+      <img src="assets/images/delivery.png" alt="Entregador">
+    </div>
+  
+    <div class="login-right">
+      <div class="login-box">
+        <h2>Acesse Seus Restaurantes Prediletos!</h2>
+  
+        <form (ngSubmit)="onSubmit()">
+          <div class="input-group">
+            <input type="email" placeholder="Digite seu email" [(ngModel)]="email" name="email" required>
+          </div>
+  
+          <div class="input-group password-group">
+            <input [type]="showPassword ? 'text' : 'password'" placeholder="Digite sua senha" [(ngModel)]="password" name="password" required>
+            <span class="toggle-password" (click)="togglePasswordVisibility()">
+              👁️
+            </span>
+          </div>
+  
+          <div class="forgot-password">
+            <a href="#">Esqueceu sua senha?</a>
+          </div>
+  
+          <button type="submit" class="login-button">Entrar</button>
+        </form>
+  
+        <p class="signup-text">Não tem uma conta? <a href="a">Criar</a></p>
+      </div>
+    </div>
+  </div>
+</main>

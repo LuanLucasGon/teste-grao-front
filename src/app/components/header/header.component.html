@@ -1,6 +1,6 @@
 <header class="header">
   <div class="logo">
-    <a routerLink="/">
+    <a routerLink="/home">
       <img src="assets/images/logo.png" alt="Logo" />
       <span>Quem tem Boca</span>
     </a>
@@ -18,7 +18,6 @@
   </nav>
 
   <div class="buttons-container">
-    <button class="btn-login">Entrar</button>
-    <button class="btn-register">Registrar-se</button>
+    <button class="btn-login" (click)="goToLogin()">Entrar</button>
   </div>
 </header>
