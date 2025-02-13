@@ -1,5 +1,5 @@
 .restaurant-list-container, .category-list-container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0;
   padding: 20px;
   text-align: left;
@@ -65,3 +65,87 @@ h2 {
     width: 100%;
   }
 }
+
+.promotion-list-container {
+  max-width: 100%;
+  padding: 20px;
+  margin: 0;
+  text-align: left;
+
+  h2 {
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 20px;
+    color: #000;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  .promotion-list {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+    justify-content: flex-start;
+  }
+
+  .promotion-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 344px;
+    height: 200px;
+    border-radius: 20px;
+    padding: 15px;
+    background-size: cover;
+    background-position: center;
+  
+    .promotion-info-container{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  
+      .promo-info{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    
+        h3 {
+          margin: 0;
+          color: #fff;
+          font-size: 16px;
+        }
+    
+        span {
+          color:#fff;
+          font-size: 12px;
+        }
+      }
+  
+      .btn-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+  
+        .buy-button {
+          background-color: #d62a00;
+          color: #fff;
+          width: 112px;
+          height: 39px;
+          padding: 20px;
+          border: none;
+          border-radius: 20px;
+          cursor: pointer;
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+  
+          &:hover {
+            background: #b22200;
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -24,4 +24,24 @@
       </div>
     </div>
   </div>
+
+  <div class="promotion-list-container">
+    <h2>Promoção do dia</h2>
+    <div class="promotion-list">
+      <div class="promotion-item" *ngFor="let promotion of promotions">
+        <div class="promotion-card" [style.backgroundImage]="'url(' + promotion.imageUrl + ')'">
+          <div class="promotion-info-container">
+            <div class="promo-info">
+              <h3>{{ promotion.title }}</h3>
+              <span>Apenas {{ promotion.price }}</span>
+            </div>
+            <div class="btn-container">
+              <button class="buy-button">Eu quero!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </main>
