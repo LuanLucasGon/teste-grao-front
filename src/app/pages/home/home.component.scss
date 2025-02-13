@@ -24,6 +24,7 @@ h2 {
 .restaurant-item, .category-item {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
   width: 80px;
   height: 120px;
   background: #fff;
@@ -52,17 +53,6 @@ h2 {
     color: #666;
     font-weight: 300;
     margin: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .restaurant-list {
-    flex-direction: column;
-    align-items: flex-start; 
-  }
-
-  .restaurant-item {
-    width: 100%;
   }
 }
 
@@ -215,3 +205,13 @@ h2 {
   }
 }
 
+@media (max-width: 500px) {
+  .restaurant-list, .category-list {
+    flex-direction: column;
+    align-items: flex-start; 
+  }
+
+  .restaurant-item, .category-item{
+    width: 100%;
+  }
+}

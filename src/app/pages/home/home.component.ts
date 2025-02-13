@@ -9,11 +9,12 @@ import { PromotionModel } from '../../models/promotion.model';
 import { PromotionService } from '../../services/promotion.service';
 import { MenuModel } from '../../models/menu.model';
 import { MenuService } from '../../services/menu.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeaderComponent],
+  imports: [CommonModule, HeaderComponent, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

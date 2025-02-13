@@ -1,0 +1,44 @@
+<app-header></app-header>
+<main>
+  <div class="restaurant-container">
+    <header class="restaurant-header">
+      <div class="restaurant-cover-photo">
+        <img src="assets/images/coverphotos/cover1.png" alt="" />
+      </div>
+      <div class="restaurant-info">
+        <div class="restaurant-icon">
+          <img [src]="restaurant.iconUrl"/>
+        </div>
+        <div class="restaurant-details">
+          <div class="restaurant-name">
+            <h1>{{ restaurant.name }}</h1>
+            <p class="cuisine-type">{{ restaurant.category }}</p>
+          </div>
+
+          <div class="restaurant-address-rating">
+            <fa-icon [icon]="faMapMarker"></fa-icon>
+            <span>{{ restaurant?.address }}</span>
+            <fa-icon [icon]="faPhone"></fa-icon>
+            <span>{{ restaurant?.phone }}</span>
+            <fa-icon [icon]="faStar"></fa-icon>
+            <span>{{ restaurant?.rating }}</span>
+          </div>
+        </div>
+      </div>
+    </header>
+  
+    <section class="menu-section">
+      <h2>Pratos</h2>
+      <div class="menu-grid">
+        <div *ngFor="let item of restaurant.dishes" class="menu-item">
+          <div class="item-details">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+            <span class="price">R$ {{ item.price }}</span>
+          </div>
+          <img [src]="item.imageUrl" [alt]="item.name">
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

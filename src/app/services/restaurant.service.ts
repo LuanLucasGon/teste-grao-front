@@ -14,34 +14,74 @@ export class RestaurantService {
     {
       id: "1",
       name: 'Restaurante sem futuro',
+      category: "Comida Brasileira",
       address: "Rua não existe, 123",
       phone:"34112345678",
+      rating: "5.0",
       description: 'Ao ponto! Aqui agora É refresco Bão Tché!',
-      imageUrl: 'assets/images/restaurant1.png'
+      iconUrl: 'assets/images/restaurant1.png',
+      coverUrl: "assets/images/coverphotos/cover1.png",
+      dishes: [
+        { id: '1', name: 'Strogonoff', description: 'Carne, arroz, batata frita', price: "21.21", imageUrl: 'assets/images/restaurant1.png' },
+        { id: '2',name: 'Bife a cavalo', description: 'Bife, ovo, arroz', price: "25.20", imageUrl: 'assets/images/bife-a-cavalo.jpg' },
+        { id: '3', name: 'Arroz carreteiro', description: 'Arroz, carnes variadas', price: "25.00", imageUrl: 'assets/images/arroz-carreteiro.jpg' },
+        { id: '4', name: 'Galinhada', description: 'Arroz, frango', price: "15.00", imageUrl: 'assets/images/galinhada.jpg' },
+        { id: '5', name: 'Executivo', description: 'Arroz, feijão, bife, purê', price: "21.21", imageUrl: 'assets/images/executivo.jpg' }
+      ]
     },
     {
       id: "2",
-      name: 'Fátia da tia Fátime',
+      name: 'Restaurante sem futuro',
+      category: "Comida Brasileira",
       address: "Rua não existe, 123",
       phone:"34112345678",
-      description: 'Fátima',
-      imageUrl: 'assets/images/restaurant2.png'
+      rating: "5.0",
+      description: 'Ao ponto! Aqui agora É refresco Bão Tché!',
+      iconUrl: 'assets/images/restaurant1.png',
+      coverUrl: "assets/images/coverphotos/cover1.png",
+      dishes: [
+        { id: '1', name: 'Strogonoff', description: 'Carne, arroz, batata frita', price: "21.21", imageUrl: 'assets/images/strogonoff.jpg' },
+        { id: '2',name: 'Bife a cavalo', description: 'Bife, ovo, arroz', price: "25.20", imageUrl: 'assets/images/bife-a-cavalo.jpg' },
+        { id: '3', name: 'Arroz carreteiro', description: 'Arroz, carnes variadas', price: "25.00", imageUrl: 'assets/images/arroz-carreteiro.jpg' },
+        { id: '4', name: 'Galinhada', description: 'Arroz, frango', price: "15.00", imageUrl: 'assets/images/galinhada.jpg' },
+        { id: '5', name: 'Executivo', description: 'Arroz, feijão, bife, purê', price: "21.21", imageUrl: 'assets/images/executivo.jpg' }
+      ]
     },
     {
       id: "3",
       name: 'Restaurante sem futuro',
+      category: "Comida Brasileira",
       address: "Rua não existe, 123",
       phone:"34112345678",
+      rating: "5.0",
       description: 'Ao ponto! Aqui agora É refresco Bão Tché!',
-      imageUrl: 'assets/images/restaurant1.png'
+      iconUrl: 'assets/images/restaurant1.png',
+      coverUrl: "assets/images/coverphotos/cover1.png",
+      dishes: [
+        { id: '1', name: 'Strogonoff', description: 'Carne, arroz, batata frita', price: "21.21", imageUrl: 'assets/images/strogonoff.jpg' },
+        { id: '2',name: 'Bife a cavalo', description: 'Bife, ovo, arroz', price: "25.20", imageUrl: 'assets/images/bife-a-cavalo.jpg' },
+        { id: '3', name: 'Arroz carreteiro', description: 'Arroz, carnes variadas', price: "25.00", imageUrl: 'assets/images/arroz-carreteiro.jpg' },
+        { id: '4', name: 'Galinhada', description: 'Arroz, frango', price: "15.00", imageUrl: 'assets/images/galinhada.jpg' },
+        { id: '5', name: 'Executivo', description: 'Arroz, feijão, bife, purê', price: "21.21", imageUrl: 'assets/images/executivo.jpg' }
+      ]
     },
     {
       id: "4",
-      name: 'Fátia da tia Fátime',
+      name: 'Restaurante sem futuro',
+      category: "Comida Brasileira",
       address: "Rua não existe, 123",
       phone:"34112345678",
-      description: 'Fátima',
-      imageUrl: 'assets/images/restaurant2.png'
+      rating: "5.0",
+      description: 'Ao ponto! Aqui agora É refresco Bão Tché!',
+      iconUrl: 'assets/images/restaurant1.png',
+      coverUrl: "assets/images/coverphotos/cover1.png",
+      dishes: [
+        { id: '1', name: 'Strogonoff', description: 'Carne, arroz, batata frita', price: "21.21", imageUrl: 'assets/images/strogonoff.jpg' },
+        { id: '2',name: 'Bife a cavalo', description: 'Bife, ovo, arroz', price: "25.20", imageUrl: 'assets/images/bife-a-cavalo.jpg' },
+        { id: '3', name: 'Arroz carreteiro', description: 'Arroz, carnes variadas', price: "25.00", imageUrl: 'assets/images/arroz-carreteiro.jpg' },
+        { id: '4', name: 'Galinhada', description: 'Arroz, frango', price: "15.00", imageUrl: 'assets/images/galinhada.jpg' },
+        { id: '5', name: 'Executivo', description: 'Arroz, feijão, bife, purê', price: "21.21", imageUrl: 'assets/images/executivo.jpg' }
+      ]
     }
   ];
 
