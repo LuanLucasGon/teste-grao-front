@@ -77,6 +77,15 @@
   .buttons-container {
     display: flex;
     gap: 16px;
+
+    .btn-logout {
+      background: none;
+      border: none;
+      color: red;
+      cursor: pointer;
+      font-size: 14px;
+      margin-left: 8px;
+    }
   }
 
   .btn-login {

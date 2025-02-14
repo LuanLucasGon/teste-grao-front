@@ -24,6 +24,8 @@
               👁️
             </span>
           </div>
+
+          <p *ngIf="loginError" class="error-message">{{ errorMessage }}</p>
   
           <div class="forgot-password">
             <a href="#">Esqueceu sua senha?</a>

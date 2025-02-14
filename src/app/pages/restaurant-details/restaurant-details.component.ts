@@ -15,21 +15,36 @@ import { HeaderComponent } from '../../components/header/header.component';
 })
 export class RestaurantDetailsComponent {
   restaurant: any = {};
+  dishes: any = [];
   faMapMarker = faMapMarkerAlt;
   faPhone = faPhone;
   faStar = faStar;
+  restaurantId: string | null;
 
   constructor(private route: ActivatedRoute, private restaurantService: RestaurantService) {
-    const restaurantId = this.route.snapshot.paramMap.get('id');
-    if (restaurantId) {
-      this.restaurantService.getRestaurantById(restaurantId).subscribe((data) => {
+    this.restaurantId = this.route.snapshot.paramMap.get('id');
+  }
+
+  ngOnInit(): void {
+    if (this.restaurantId) {
+      this.restaurantService.getRestaurantById(this.restaurantId).subscribe((data) => {
         if (data) {
           this.restaurant = data;
         } else {
           console.error('Nenhum restaurante encontrado.');
         }
       });
+
+      this.restaurantService.getRestaurantItem(this.restaurantId).subscribe((data) => {
+        console.log(data)
+        if (data) {
+          console.log(data)
+          this.dishes = data;
+        } else {
+          console.error('Nenhum restaurante encontrado.');
+        }
+      });
     }
-    console.log(`Carregando detalhes do restaurante ID: ${restaurantId}`);
+
   }
 }

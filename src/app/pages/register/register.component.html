@@ -39,6 +39,8 @@
   
           <button type="submit" class="login-button">Entrar</button>
         </form>
+
+        <p *ngIf="registerError" class="error-message">{{ errorMessage }}</p>
   
         <p class="signup-text">Já tem uma conta? <a routerLink="/login">Entrar</a></p>
       </div>

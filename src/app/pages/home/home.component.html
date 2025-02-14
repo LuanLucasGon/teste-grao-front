@@ -4,7 +4,7 @@
   <div class="restaurant-list-container">
     <h2>Restaurantes</h2>
     <div class="restaurant-list">
-      <div class="restaurant-item" *ngFor="let restaurant of restaurants" [routerLink]="['/restaurant', restaurant.id]">
+      <div class="restaurant-item" *ngFor="let restaurant of restaurants" [routerLink]="['/restaurant', restaurant._id]">
         <img [src]="restaurant.iconUrl" [alt]="restaurant.name" class="restaurant-image"/>
         <div class="restaurant-info">
           <h3>{{ restaurant.name }}</h3>

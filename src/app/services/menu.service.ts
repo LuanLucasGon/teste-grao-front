@@ -7,7 +7,7 @@ import { delay, Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class MenuService {
-  private readonly API_URL = 'https://api.meusite.com/restaurantes';
+  private readonly API_URL = 'http://localhost:3000/restaurantes';
   private readonly USE_MOCK = true;
 
   private readonly mocksMenu: MenuModel[] = [

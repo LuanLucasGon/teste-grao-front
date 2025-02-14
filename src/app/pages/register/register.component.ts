@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -16,13 +17,34 @@ export class RegisterComponent {
   password: string = '';
   confirmPassword: string = '';
   showPassword: boolean = false;
+  errorMessage: string = "";
+  registerError = false;
+  router = inject(Router);
+
+  constructor(private authService: AuthService){}
 
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }
 
   onSubmit() {
-    console.log('Email:', this.email);
-    console.log('Password:', this.password);
+    this.authService.register(this.name, this.cpf, this.email, this.password, this.confirmPassword).subscribe({
+      next: (response) => {
+
+        if (response.token) {
+          localStorage.setItem('authToken', response.token);
+          localStorage.setItem('userName', response.name);
+        }
+  
+        this.errorMessage = '';
+        this.registerError = false;
+        this.router.navigate(['/login']);
+      },
+      error: (err) => {
+        console.error("Erro no login:", err);
+        this.registerError = true;
+        this.errorMessage = err.error?.msg || "Erro ao fazer login. Verifique suas credenciais.";
+      }
+    });
   }
 }

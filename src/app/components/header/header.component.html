@@ -18,6 +18,13 @@
   </nav>
 
   <div class="buttons-container">
-    <button class="btn-login" (click)="goToLogin()">Entrar</button>
+    <ng-container *ngIf="isLoggedIn; else loginButton">
+      <span class="username">Olá, {{ username }}</span>
+      <button class="btn-logout" (click)="logout()">Sair</button>
+    </ng-container>
+
+    <ng-template #loginButton>
+      <button class="btn-login" (click)="goToLogin()">Entrar</button>
+    </ng-template>
   </div>
 </header>

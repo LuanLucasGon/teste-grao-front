@@ -28,6 +28,7 @@ export class HomeComponent {
 
   ngOnInit(): void {
     this.restaurantService.getRestaurants().subscribe((data) => {
+      console.log(data);
       this.restaurants = data;
     });
 

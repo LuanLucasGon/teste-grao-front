@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
-import { RestaurantModel } from '../models/restaurant.model';
+import { DishesModel, RestaurantModel } from '../models/restaurant.model';
 import { HttpClient } from '@angular/common/http';
-import { delay, Observable, of } from 'rxjs';
+import { delay, map, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestaurantService {
-  private readonly API_URL = 'https://api.meusite.com/restaurantes';
-  private readonly USE_MOCK = true;
+  private readonly API_URL = 'http://localhost:3000/restaurants';
+  private readonly USE_MOCK = false;
 
   private readonly mockRestaurants: RestaurantModel[] = [
     {
-      id: "1",
+      _id: "1",
       name: 'Restaurante sem futuro',
       category: "Comida Brasileira",
       address: "Rua não existe, 123",
@@ -30,7 +30,7 @@ export class RestaurantService {
       ]
     },
     {
-      id: "2",
+      _id: "2",
       name: 'Restaurante sem futuro',
       category: "Comida Brasileira",
       address: "Rua não existe, 123",
@@ -48,7 +48,7 @@ export class RestaurantService {
       ]
     },
     {
-      id: "3",
+      _id: "3",
       name: 'Restaurante sem futuro',
       category: "Comida Brasileira",
       address: "Rua não existe, 123",
@@ -66,7 +66,7 @@ export class RestaurantService {
       ]
     },
     {
-      id: "4",
+      _id: "4",
       name: 'Restaurante sem futuro',
       category: "Comida Brasileira",
       address: "Rua não existe, 123",
@@ -89,13 +89,23 @@ export class RestaurantService {
 
   getRestaurants(): Observable<RestaurantModel[]> {
     return this.USE_MOCK
-      ? of(this.mockRestaurants).pipe(delay(500))
-      : this.http.get<RestaurantModel[]>(this.API_URL);
+    ? of(this.mockRestaurants).pipe(delay(500))
+    : this.http.get<{ restaurants: RestaurantModel[] }>(this.API_URL).pipe(
+        map(response => response.restaurants)
+      );
   }
 
   getRestaurantById(id: string): Observable<RestaurantModel | undefined> {
     return this.USE_MOCK
-      ? of(this.mockRestaurants.find(r => r.id === id)).pipe(delay(300))
-      : this.http.get<RestaurantModel>(`${this.API_URL}/${id}`);
+    ? of(this.mockRestaurants.find(r => r._id === id)).pipe(delay(300))
+    : this.http.get<{ restaurants: RestaurantModel }>(`${this.API_URL}/${id}`).pipe(
+        map(response => response.restaurants ?? undefined)
+      );
+  }
+
+  getRestaurantItem(id: string): Observable<DishesModel[] | undefined> {
+    return this.http.get<{ items: DishesModel[] }>(`${this.API_URL}/items/${id}`).pipe(
+        map(response => response.items ?? undefined)
+      );
   }
 }
