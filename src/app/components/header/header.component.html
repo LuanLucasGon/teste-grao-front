@@ -6,9 +6,21 @@
     </a>
   </div>
 
-  <div class="search-bar">
-    <fa-icon [icon]="faSearch" class="search-icon"></fa-icon>
-    <input type="text" placeholder="Pesquisar..." />
+  <div class="search">
+    <div class="search-bar">
+      <fa-icon [icon]="faSearch" class="search-icon"></fa-icon>
+      <input 
+        type="text" 
+        placeholder="Pesquisar..." 
+        (input)="onSearch()" 
+        [(ngModel)]="query" 
+        (focus)="showDropdown = true" 
+        (blur)="hideDropdownWithDelay()" 
+      />
+    </div>
+    <ul class="search-dropdown" *ngIf="searchResults.length">
+      <li *ngFor="let option of searchResults">{{ option.name }}</li>
+    </ul>
   </div>
 
   <nav>

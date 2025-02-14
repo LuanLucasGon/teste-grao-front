@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { DishesModel, RestaurantModel } from '../models/restaurant.model';
 import { HttpClient } from '@angular/common/http';
-import { delay, map, Observable, of } from 'rxjs';
+import { catchError, debounceTime, delay, distinctUntilChanged, map, Observable, of, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestaurantService {
-  private readonly API_URL = 'http://localhost:3000/restaurants';
+   private readonly API_URL = 'http://localhost:3000/restaurants';
   private readonly USE_MOCK = false;
 
   private readonly mockRestaurants: RestaurantModel[] = [
@@ -107,5 +107,18 @@ export class RestaurantService {
     return this.http.get<{ items: DishesModel[] }>(`${this.API_URL}/items/${id}`).pipe(
         map(response => response.items ?? undefined)
       );
+  }
+
+  searchRestaurant(query: string): Observable<any[]> {
+    if (!query.trim()) {
+      return of([]);
+    }
+
+    const teste =  this.http.get<{ restaurants: any[] }>(`${this.API_URL}/search/${query}`).pipe(
+      map(response => response.restaurants ?? undefined)
+    );
+
+    console.log(teste);
+    return teste;
   }
 }

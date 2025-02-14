@@ -4,6 +4,7 @@ import { Router, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FormsModule } from '@angular/forms';
+import { RestaurantService } from '../../services/restaurant.service';
 
 @Component({
   selector: 'app-header',
@@ -14,14 +15,13 @@ import { FormsModule } from '@angular/forms';
 })
 export class HeaderComponent {
   faSearch = faSearch;
-  @Input() logoPath: string = 'assets/images/logo.png';
-  @Input() siteName: string = 'Quem tem boca';
   isLoggedIn = false;
   username: string | null = '';
+  searchResults: any[] = [];
+  query: string = '';
+  showDropdown = false;
 
-  constructor(private router: Router) {}
-
-  searchQuery: string = '';
+  constructor(private router: Router, private restaurantService: RestaurantService) {}
 
   ngOnInit() {
     const token = localStorage.getItem('authToken');
@@ -34,7 +34,20 @@ export class HeaderComponent {
   }
 
   onSearch(): void {
-    console.log('Pesquisando por:', this.searchQuery);
+    this.restaurantService.searchRestaurant(this.query).subscribe(results => {
+      this.searchResults = results;
+      this.showDropdown = true;
+    });
+  }
+
+  hideDropdownWithDelay(): void {
+    setTimeout(() => {
+      this.showDropdown = false;
+    }, 200);
+  }
+
+  goToDetail(item: any) {
+    this.router.navigate([`/restaurant/${item._id}`]);
   }
 
   goToLogin(): void {
