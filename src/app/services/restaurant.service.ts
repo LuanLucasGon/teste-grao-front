@@ -118,7 +118,6 @@ export class RestaurantService {
       map(response => response.restaurants ?? undefined)
     );
 
-    console.log(teste);
     return teste;
   }
 }

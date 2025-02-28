@@ -47,7 +47,7 @@ export class HeaderComponent {
   }
 
   goToDetail(item: any) {
-    this.router.navigate([`/restaurant/${item._id}`]);
+    this.router.navigate([`/restaurant/${item}`]);
   }
 
   goToLogin(): void {

@@ -36,9 +36,7 @@ export class RestaurantDetailsComponent {
       });
 
       this.restaurantService.getRestaurantItem(this.restaurantId).subscribe((data) => {
-        console.log(data)
         if (data) {
-          console.log(data)
           this.dishes = data;
         } else {
           console.error('Nenhum restaurante encontrado.');
